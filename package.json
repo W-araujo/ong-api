@@ -2,7 +2,7 @@
   "name": "trab-pi2",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.js",
+  "main": "app.js",
   "scripts": {
     "test": "jest --coverage --verbose",
     "dev": "nodemon ./src/server.js",
