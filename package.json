@@ -4,8 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "jest --coverage --verbose",
-    "start": "node server.js"
+    "test": "jest --coverage --verbose"
   },
   "author": "",
   "license": "ISC",
