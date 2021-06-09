@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest --coverage --verbose",
     "dev": "nodemon ./src/server.js",
+    "start":"nodemon ./src/server.js",
     "migrate:run": "npx knex migrate:latest",
     "migrate:revert": "npx knex migrate:rollback",
     "seed:run": "npx knex seed:run"
