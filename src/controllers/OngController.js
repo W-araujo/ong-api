@@ -12,6 +12,16 @@ class ONGController {
         }
     }
 
+    async findByEmail(req, res) {
+        try {
+            const ong = await OngService.findByEmail(req.body)
+            return res.status(200).json(ong)
+        } catch (error) {
+            console.log(error)
+            return res.status(400).json('Falha na busca da ONG :(')
+        }
+    }
+
     async listAll(req, res) {
         try {
             const ONGs = await OngService.listAll()
@@ -59,16 +69,6 @@ class ONGController {
         } catch (error) {
             console.log(error)
             return res.status(401).json('Falha na autenticação :(')
-        }
-    }
-
-    async searchOngsByName(req, res) {
-        try {
-            const ONGs = await OngService.searchOngsByName(req.query.name)
-            return res.status(200).json(ONGs)
-        } catch (error) {
-            console.log(error)
-            return res.status(400).json('Erro na busca por tipo :(')
         }
     }
 

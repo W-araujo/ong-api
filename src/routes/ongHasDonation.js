@@ -6,7 +6,6 @@ const routes = Router()
 
 const ongHasDonationController = new OngHasDonationController()
 
-routes.use(authorization)
 routes.post('/ong/donation', ongHasDonationController.create)
 routes.get('/ong/donation/all', ongHasDonationController.list)
 routes.get('/ong/donation/:ong_id', ongHasDonationController.getDonationByOngId)

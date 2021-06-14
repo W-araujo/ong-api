@@ -10,7 +10,7 @@ class OngHasDonation extends BaseModel {
 
     async getDonationByOngId(ong_id) {
         return knex(`${this.model} as ohd`)
-            .join('ong as o', 'o.id', 'ohd.ong_id')
+            .join('ONG as o', 'o.id', 'ohd.ong_id')
             .select('o.name')
             .join('donation as d', 'd.id', 'ohd.donation_id')
             .select('d.value')
@@ -19,7 +19,7 @@ class OngHasDonation extends BaseModel {
 
     async infoOng(ong_id) {
         const info = knex(`${this.model} as ohd`)
-            .join('ong as o', 'o.id', 'ohd.ong_id')
+            .join('ONG as o', 'o.id', 'ohd.ong_id')
             .join('donation as d', 'd.id', 'ohd.donation_id')
             .where({ ong_id })
             .sum({ Totalvalue: "value" })

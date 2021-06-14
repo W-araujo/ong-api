@@ -73,13 +73,6 @@ class ONGService {
         return ONG.uploadHighlights(id, isHighlights)
     }
 
-    async searchOngsByName(name) {
-        if (!name) {
-            throw new Error('Nenhum nome informado')
-        }
-        return ONG.searchOngsByName(name)
-    }
-
     async update(id, data) {
         return ONG.update(id, data)
     }

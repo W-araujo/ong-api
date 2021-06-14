@@ -25,7 +25,7 @@ class ONG extends BaseModel {
 
 
     async findHighlights() {
-        return knex(`ong as o`)
+        return knex(`ONG as o`)
             .join('type as t', 't.id', 'o.type_id')
             .select('o.id', 'o.avatar', 'o.name', 'o.description', 'o.email', 't.name as type', 'o.phone')
             .where({ highlights: true })
@@ -48,7 +48,7 @@ class ONG extends BaseModel {
     async listAll() {
         return knex(`${this.model} as o`)
             .join('type as t', 't.id', 'o.type_id')
-            .select('o.id', 'o.avatar', 'o.name', 'o.description', 'o.email', 't.name as tname', 'o.phone')
+            .select('o.id', 'o.avatar', 'o.name', 'o.description', 'o.email', 'o.highlights', 't.name as tname', 'o.phone')
             .where({ is_deleted: false })
             .orderBy('name', 'asc')
     }

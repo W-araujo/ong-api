@@ -2,9 +2,13 @@
   "name": "trab-pi2",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "./src/app.js",
   "scripts": {
-    "test": "jest --coverage --verbose"
+    "test": "jest --coverage --verbose",
+    "dev": "nodemon ./src/server.js",
+    "migrate:run": "npx knex migrate:latest",
+    "migrate:revert": "npx knex migrate:rollback",
+    "seed:run": "npx knex seed:run"
   },
   "author": "",
   "license": "ISC",
